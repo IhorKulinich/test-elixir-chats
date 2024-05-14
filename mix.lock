@@ -1,0 +1,5 @@
+%{
+  "kvs": {:hex, :kvs, "10.8.2", "4c98d637b77be3e1267c94d4de91da6ac6aa7ed2230506e02993259dc81c2b78", [:mix], [], "hexpm", "31d71240185829347874b3cc95af8257f90144ba1c4172421ce57678b8f89741"},
+  "n2o": {:hex, :n2o, "10.12.3", "8a6ae32712a22ca6fe86489f11ebf33e6ab1bc2a5b4692ad305eaccae9680d4e", [:mix, :rebar3], [], "hexpm", "9edf18bffd9a49b9afe6f9af887ca2f755de0965e70c20004df434249d0c0bf1"},
+  "nitro": {:hex, :nitro, "8.2.4", "8ca1e0183ac13c00740c70a9acebdc38a790445034f7f64f0d807064553cc3e0", [:mix, :rebar3], [], "hexpm", "7afa468c2540944bfdb6153988649dcfea579277136d1910a202e3123c0de5ae"},
+}
