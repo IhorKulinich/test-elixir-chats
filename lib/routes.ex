@@ -16,7 +16,7 @@ defmodule Sample.Routes do
     end
 
     def index(conn) do
-        html_response("index.html")
+        html_response("./templates/index.html")
     end
 
     def index_redirect(conn) do
@@ -32,7 +32,7 @@ defmodule Sample.Routes do
 
     def chat(conn, %{params: %{"chat_id" => chat_id}}) do
         chat_data = get_chat_data(chat_id)
-        html_response("chat.html", chat_data: chat_data)
+        html_response("./templates/chat.html", chat_data: chat_data)
     end
 
     defp get_chat_data(chat_id) do
