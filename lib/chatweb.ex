@@ -1,6 +1,6 @@
 defmodule ChatWeb.ChatController do
     use N2O, with: [:kvs, :n2o, :nitro]
-    import Nitro.Socket
+    use Nitro
 
     def send_notification(message) do
         event({:notification, message})
@@ -46,13 +46,13 @@ end
 
 
 defmodule ChatWeb.PageController do
-    import Nitro.Controller
+    use Nitro
 
-  def chat(conn, _params) do
-    {:ok, conn, html_response(conn, :chat)}
-  end
+    def chat(conn, _params) do
+        {:ok, conn, html_response(conn, :chat)}
+    end
 
-  defp html_response(conn, template) do
-    Nitro.html_response(conn, template, [])
-  end
+    defp html_response(conn, template) do
+        Nitro.html_response(conn, template, [])
+    end
 end

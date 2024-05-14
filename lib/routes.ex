@@ -1,32 +1,38 @@
 defmodule Sample.Routes do
     use N2O, with: [:kvs, :n2o, :nitro]
-    import Nitro.Router
+    use Nitro
+    # import Nitro.Router
 
-    get "/index", Sample.Routes, :index
-    get "/chat/:chat_id", ChatWeb.ChatController, :chat
-    get "/", Sample.Routes, :index_redirect
+    # get "/index", Sample.Routes, :index
+    # get "/chat/:chat_id", ChatWeb.ChatController, :chat
+    # get "/", Sample.Routes, :index_redirect
 
-    match _ do
-        send_resp(conn, 404, "Not Found")
+    def routes do
+        [
+          {"/index", :get, &index/1},
+          {"/chat/:chat_id", :get, &chat/2},
+          {"/", :get, &index_redirect/1}
+        ]
     end
 
-    def index(socket) do
-        {:ok, render(socket, "index.html")}
+    def index(conn) do
+        html_response("index.html")
     end
 
-    def index_redirect(conn, _) do
+    def index_redirect(conn) do
         conn
-        |> redirect(to: "/index")
+        |> Nitro.Conn.put_status(302)
+        |> Nitro.Conn.put_resp_header("location", "/index")
+        |> Nitro.Conn.send_resp(302, "")
     end
 
-    def chat(socket, %{params: %{"chat_id" => chat_id}}) do
-        chat_data = get_chat_data(chat_id)
-        {:ok, render(socket, "chat.html", chat_data: chat_data)}
+    defp html_response(template, assigns \\ %{}) do
+        Nitro.html_response(template, assigns, [])
     end
 
-    def handle_event("open_chat", %{"chat_id" => chat_id}, socket) do
+    def chat(conn, %{params: %{"chat_id" => chat_id}}) do
         chat_data = get_chat_data(chat_id)
-        {:noreply, render(socket, "chat.html", chat_data: chat_data)}
+        html_response("chat.html", chat_data: chat_data)
     end
 
     defp get_chat_data(chat_id) do
