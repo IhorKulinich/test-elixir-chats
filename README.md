@@ -13,11 +13,11 @@
     │
     └─ lib/chatweb.ex:3:5: ChatWeb.ChatController (module)
 
-mix deps.get__
-Resolving Hex dependencies...__
-Resolution completed in 0.02s__
-Unchanged:__
-  kvs 10.8.2__
-  n2o 10.12.3__
-  nitro 8.2.4__
+mix deps.get  
+Resolving Hex dependencies...  
+Resolution completed in 0.02s  
+Unchanged:  
+  kvs 10.8.2  
+  n2o 10.12.3  
+  nitro 8.2.4  
 All dependencies are up to date
