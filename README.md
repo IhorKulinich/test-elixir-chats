@@ -1,21 +1,14 @@
-# Testchats
+    error: module Nitro.Router is not loaded and could not be found. This may be happening because the module you are trying to load directly or indirectly depends on the current module
+    │
+  3 │     import Nitro.Router
+    │     ^
+    │
+    └─ lib/routes.ex:3:5: Sample.Routes (module)
 
-**TODO: Add description**
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `testchats` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:testchats, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/testchats>.
+    error: module Nitro.Socket is not loaded and could not be found. This may be happening because the module you are trying to load directly or indirectly depends on the current module
+    │
+  3 │     import Nitro.Socket
+    │     ^
+    │
+    └─ lib/chatweb.ex:3:5: ChatWeb.ChatController (module)
 
