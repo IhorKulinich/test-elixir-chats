@@ -1,4 +1,4 @@
-Compiling 3 files (.ex)
+
     error: module Nitro is not loaded and could not be found. This may be happening because the module you are trying to load directly or indirectly depends on the current module
     │
   3 │     import Nitro
@@ -13,5 +13,3 @@ Compiling 3 files (.ex)
     │
     └─ lib/chatweb.ex:3:5: ChatWeb.ChatController (module)
 
-
-== Compilation error in file lib/routes.ex ==
